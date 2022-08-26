@@ -1,36 +1,24 @@
-#get variables
-"Enter first value: "
-x = readline();
-
-"enter action (+ or - or / or *)"
-theAction = readline();
-
-"enter second value: "
-y = readline();
-
-
-result = 0
-if(theAction == "+")
+#function is used because of readline, if dont use this functio app could not get inputs idk why but ...
+getUserInputs <- function()
 {
-	result = x+y
-}
-else if(theAction == "-")
-{
-	result = x-y
-}
-else if(theAction == "*")
-{
-	result = x*y
-}
-else if(theAction == "/")
-{
-	result = x/y
-}
-else 
-{
-	"error while proccess action.."
+  x<-readline(prompt="enter first number: ")
+  theAction<-readline(prompt="enter action (+ or - or / or *):")
+  y<- readline(prompt="enter second number:")
+  x<-as.numeric(x)
+  y<-as.numeric(y)
+  
+  if(theAction == "+")
+    return(x+y)
+  else if(theAction == "-")
+    return(x-y)
+  else if(theAction == "*")
+    return(x*y)
+  else if(theAction == "/")
+    return(x/y)
+  else
+    "something went wrong in proccess the action.."
 }
 
-paste("result = ",result)
+getUserInputs()
 
 
